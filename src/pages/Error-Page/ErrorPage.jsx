@@ -42,29 +42,29 @@ const ErrorPage = () => {
         } min-h-screen`}
       >
         <div
-          className={`col-span-1 p-4 ${
+          className={`hidden xl:block col-span-1 p-4 ${
             isDarkMode ? "dark:bg-custom-dark" : "bg-white"
           }`}
         >
           <div className="flex justify-center items-center h-full">
-            <div className="rounded-md">
+            <div className="rounded-md relative">
               <img
                 src={isDarkMode ? DarkThemeImage : LightThemeImage}
                 className="rounded-md object-cover"
                 alt=""
               />
-              <div className="absolute top-0 left-0 mt-[100px] ml-[75px]">
+              <div className="absolute top-0 left-0 xl:mt-[15%] xl:ml-[10%] w-[80%] xl:w-[80%]">
                 <p
                   className={`${
                     isDarkMode ? "text-[#DBDBDB]" : "text-[#FFF]"
-                  } text-3xl font-bold`}
+                  } xl:text-3xl text-lg font-bold`}
                 >
                   One Stop, Many Solution
                 </p>
                 <p
                   className={`${
                     isDarkMode ? "text-[#ACACAC]" : "text-[#FFF]"
-                  } w-[400px] mt-2 text-base`}
+                  } xl:w-[100%] mt-2 text-base`}
                 >
                   One Solution that Speed up your Device Reports and Make
                   Efficient way to organize your data.
@@ -74,12 +74,12 @@ const ErrorPage = () => {
           </div>
         </div>
         <div
-          className={`col-span-2 p-4 ${
+          className={`xl:col-span-2 col-span-12 p-4 ${
             isDarkMode ? "dark:bg-custom-dark" : "bg-white"
           }`}
           style={{ display: "grid", gridTemplateRows: "1fr auto" }}
         >
-          <div className="grid grid-cols-1 gap-4 justify-center">
+          <div className="grid h-20 grid-cols-1 gap-4 justify-center">
             <div className="flex flex-col items-end">
               <div className="m-2">
                 <img
@@ -94,33 +94,33 @@ const ErrorPage = () => {
 
           <div
             style={{
-              marginTop: "-10%",
               overflowY: "auto",
               marginBottom: "13%",
             }}
-            className="grid grid-cols-1 gap-4 justify-center items-center"
+            className="grid grid-cols-1 xl:mt-0 mt-[-700pt] gap-4 justify-center items-center"
           >
-              <>
-                <div className="flex flex-col items-center">
-                  <div className=" ml-[-35%] m-2">
-                    <img
-                      src={isDarkMode ? DarkThemeLogo : LightThemeLogo}
-                      alt=""
-                    />
-                    <p
-                      className={`mt-10 mb-[45%] ${
-                        isDarkMode ? "text-[#DBDBDB]" : "text-[#191A1B]"
-                      }`}
-                    >
-                      <span className="font-bold text-3xl">Page Doesn't Exist!</span>
-                    </p>
-                  </div>
+            <>
+              <div className="flex flex-col items-center">
+                <div className=" xl:ml-[-35%] m-2">
+                  <img
+                    src={isDarkMode ? DarkThemeLogo : LightThemeLogo}
+                    alt=""
+                  />
+                  <p
+                    className={`mt-10 mb-[45%] ${
+                      isDarkMode ? "text-[#DBDBDB]" : "text-[#191A1B]"
+                    }`}
+                  >
+                    <span className="font-bold text-3xl">
+                      Page Doesn't Exist!
+                    </span>
+                  </p>
                 </div>
-              </>
-           
+              </div>
+            </>
           </div>
           {/* Footer */}
-          <div className="flex justify-center items-center mb-3">
+          <div className="hidden xl:flex flex justify-center items-center xl:mb-3">
             <p className={`text-sm text-[#949494] cursor-pointer`}>
               2023 All Right Reserved
             </p>

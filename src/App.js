@@ -1,18 +1,23 @@
 import "./App.css";
 import ErrorPage from "./pages/Error-Page/ErrorPage";
 import Login from "./pages/Login/Login";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  Navigate,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   return (
     <>
-      {/* <Router>
-        <Switch>
-          <Route path="/login" exact element={<Login />} />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
-        </Switch>
-      </Router> */}
-      <Login />
+        </Routes>
+      </Router>
     </>
   );
 }

@@ -13,8 +13,10 @@ import PersonIcon from "@mui/icons-material/Person";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import HashLoader from "react-spinners/HashLoader";
+import "./Login.css";
 
 const Login = () => {
+  // States
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [userName, setUserName] = useState("");
@@ -23,6 +25,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Functions
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
     if (isDarkMode === true) {
@@ -119,34 +122,34 @@ const Login = () => {
         <>
           <ToastContainer />
           <div
-            className={`grid grid-cols-3 gap-4 ${
+            className={`grid grid-cols-3 ${
               isDarkMode ? "dark:bg-custom-dark" : "bg-white"
-            } min-h-screen`}
+            } min-h-screen transition-slow`}
           >
             <div
               className={`hidden xl:block col-span-1 p-4 ${
                 isDarkMode ? "dark:bg-custom-dark" : "bg-white"
-              }`}
+              } transition-slow`}
             >
               <div className="flex justify-center items-center h-full">
                 <div className="rounded-md relative">
                   <img
                     src={isDarkMode ? DarkThemeImage : LightThemeImage}
-                    className="rounded-md object-cover"
+                    className="rounded-md object-cover transition-slow"
                     alt=""
                   />
                   <div className="absolute top-0 left-0 xl:mt-[15%] xl:ml-[10%] w-[80%] xl:w-[80%]">
                     <p
                       className={`${
                         isDarkMode ? "text-[#DBDBDB]" : "text-[#FFF]"
-                      } xl:text-3xl text-lg font-bold`}
+                      } xl:text-3xl text-lg font-bold transition-slow`}
                     >
                       One Stop, Many Solution
                     </p>
                     <p
                       className={`${
                         isDarkMode ? "text-[#ACACAC]" : "text-[#FFF]"
-                      } xl:w-[100%] mt-2 text-base`}
+                      } xl:w-[100%] mt-2 text-base transition-slow`}
                     >
                       One Solution that Speed up your Device Reports and Make
                       Efficient way to organize your data.
@@ -159,14 +162,14 @@ const Login = () => {
             <div
               className={`col-span-12 xl:col-span-2 p-4 ${
                 isDarkMode ? "dark:bg-custom-dark" : "bg-white"
-              }`}
+              } transition-slow`}
               style={{ display: "grid", gridTemplateRows: "1fr auto" }}
             >
               <div className="grid h-20 grid-cols-1 gap-4 justify-center">
                 <div className="flex flex-col items-end">
                   <div className="m-2">
                     <img
-                      className="cursor-pointer"
+                      className="cursor-pointer transition-slow"
                       onClick={() => toggleMode()}
                       src={isDarkMode ? DarkThemeToggle : LightThemeToggle}
                       alt=""
@@ -188,13 +191,14 @@ const Login = () => {
                     <div className="flex flex-col items-center">
                       <div className=" xl:ml-[-35%] m-2">
                         <img
+                          className="transition-slow"
                           src={isDarkMode ? DarkThemeLogo : LightThemeLogo}
                           alt=""
                         />
                         <p
                           className={`mt-10 mb-10 ${
                             isDarkMode ? "text-[#DBDBDB]" : "text-[#191A1B]"
-                          }`}
+                          } transition-slow`}
                         >
                           Hi <span className="font-bold">{userName}</span>
                           , Welcome to our portal!
@@ -213,6 +217,7 @@ const Login = () => {
                             setPassword("");
                             setShowLoginPage(false);
                           }}
+                          className="transition-slow"
                           sx={{
                             paddingX: "40pt",
                             marginBottom: "50%",
@@ -235,15 +240,16 @@ const Login = () => {
                 ) : (
                   <>
                     <div className="flex flex-col items-center">
-                      <div className="xl:ml-[-41.5%] m-2">
+                      <div className="logo m-2">
                         <img
+                          className="transition-slow"
                           src={isDarkMode ? DarkThemeLogo : LightThemeLogo}
                           alt=""
                         />
                         <p
                           className={`mt-10 mb-10 ${
                             isDarkMode ? "text-[#DBDBDB]" : "text-[#191A1B]"
-                          }`}
+                          } transition-slow`}
                         >
                           Sign in to your account
                         </p>
@@ -252,6 +258,7 @@ const Login = () => {
                         <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
                           <TextField
                             label="Username"
+                            className="transition-slow"
                             InputLabelProps={{
                               style: {
                                 color: `${isDarkMode ? "#ACACAC" : ""}`,
@@ -334,6 +341,7 @@ const Login = () => {
                                 </InputAdornment>
                               ),
                             }}
+                            className="transition-slow"
                             variant="outlined"
                             type={showPassword ? "text" : "password"}
                             value={password}
@@ -358,6 +366,7 @@ const Login = () => {
                             <FormControlLabel
                               control={
                                 <Checkbox
+                                  className="transition-slow"
                                   checked={rememberMe}
                                   onChange={() => setRememberMe(!rememberMe)}
                                   sx={{
@@ -365,6 +374,7 @@ const Login = () => {
                                   }}
                                 />
                               }
+                              className="transition-slow"
                               label="Remember Me"
                               sx={{
                                 color: isDarkMode ? "#ACACAC" : "#191A1B",
@@ -373,7 +383,7 @@ const Login = () => {
                             <a
                               className={`text-sm ${
                                 isDarkMode ? "text-[#409F47]" : "text-[#409F47]"
-                              } cursor-pointer`}
+                              } cursor-pointer transition-slow`}
                             >
                               Forgot Password?
                             </a>
@@ -381,6 +391,7 @@ const Login = () => {
                           <Button
                             variant="contained"
                             onClick={handleSubmit}
+                            className="transition-slow"
                             sx={{
                               color: isDarkMode ? "#0D0D0D" : "#FFF",
                               justifyContent: "center",

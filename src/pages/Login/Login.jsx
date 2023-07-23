@@ -42,7 +42,6 @@ const Login = () => {
     let theme = localStorage.getItem("theme");
     let lUserName = localStorage.getItem("userName");
     let lPassword = localStorage.getItem("password");
-    console.log(theme, lUserName, lPassword);
     if (theme && theme === "light") {
       setIsDarkMode(false);
       setLoading(false);

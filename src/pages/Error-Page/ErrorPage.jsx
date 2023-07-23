@@ -30,8 +30,6 @@ const ErrorPage = () => {
 
   useEffect(() => {
     let theme = localStorage.getItem("theme");
-    let lUserName = localStorage.getItem("userName");
-    let lPassword = localStorage.getItem("password");
     if (theme && theme === "light") {
       setIsDarkMode(false);
       setLoading(false);

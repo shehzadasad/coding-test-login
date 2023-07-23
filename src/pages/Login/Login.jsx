@@ -224,7 +224,7 @@ const Login = () => {
                   </>
                 ) : (
                   <>
-                    <div className="flex justify-center items-center p-4">
+                    <div className="flex justify-center items-center p-4 xl:mt-[-15%]">
                       <div>
                         <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
                           <div className="text-center xl:text-left">
@@ -271,11 +271,14 @@ const Login = () => {
                               width: "100%",
                               "& .MuiOutlinedInput-root": {
                                 color: isDarkMode ? "#ACACAC" : "",
-                              },
-                              "& .MuiInputBase-input": {
-                                color: isDarkMode ? "#ACACAC" : "",
-                                "&::placeholder": {
-                                  color: isDarkMode ? "#ACACAC" : "",
+                                "&:hover fieldset": {
+                                  borderColor: isDarkMode ? "#ACACAC" : "",
+                                },
+                                "&.Mui-focused fieldset": {
+                                  borderColor: isDarkMode ? "#ACACAC" : "",
+                                },
+                                "& fieldset": {
+                                  borderColor: isDarkMode ? "#ACACAC" : "",
                                 },
                               },
                             }}
@@ -338,11 +341,14 @@ const Login = () => {
                               width: "100%",
                               "& .MuiOutlinedInput-root": {
                                 color: isDarkMode ? "#ACACAC" : "",
-                              },
-                              "& .MuiInputBase-input": {
-                                color: isDarkMode ? "#ACACAC" : "",
-                                "&::placeholder": {
-                                  color: isDarkMode ? "#ACACAC" : "",
+                                "&:hover fieldset": {
+                                  borderColor: isDarkMode ? "#ACACAC" : "",
+                                },
+                                "&.Mui-focused fieldset": {
+                                  borderColor: isDarkMode ? "#ACACAC" : "",
+                                },
+                                "& fieldset": {
+                                  borderColor: isDarkMode ? "#ACACAC" : "",
                                 },
                               },
                             }}
@@ -356,6 +362,9 @@ const Login = () => {
                                   onChange={() => setRememberMe(!rememberMe)}
                                   sx={{
                                     color: isDarkMode ? "#ACACAC" : "#ACACAC",
+                                    "&.Mui-checked": {
+                                      color: "#66B127",
+                                    },
                                   }}
                                 />
                               }
